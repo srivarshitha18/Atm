@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String args[]){
+        Scanner input =new Scanner(System.in);
+        String pin="9999";
+        String acctype="savings";
+        int Balance=50000;
+        System.out.print("Enter pin: ");
+        String pin1=input.nextLine();
+        if(pin.equals(pin1)){
+            System.out.print("Enter the account type: ");
+        String acc=input.nextLine().toLowerCase();
+            if(acctype.equals(acc)){
+                System.out.print("Enter the amount: ");
+                int amount=input.nextInt();
+                if(Balance>amount){
+                System.out.println("wait...");
+                System.out.println("Collect money");
+                System.out.println("Balance "+(Balance-amount));
+            }
+            else
+            System.out.println("Insufficient Balance");
+            }
+            else
+            System.out.println("Invalid account type");
+        }  
+        else
+         System.out.println("Invalid pin");
+        
+    }
+
+}
