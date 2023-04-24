@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String args[]){
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter number of products: ");
+        int n=input.nextInt();
+        int i=1;
+        String product[]=new String[n];
+        int price[]=new int[n];
+        int qty[]=new int[n];
+        while(i<=n){
+            System.out.print(input.nextLine());
+            System.out.print("Enter product name: ");
+            product[i-1]=input.nextLine();
+            System.out.print("Enter price: ");
+            price[i-1]=input.nextInt();
+            System.out.print("Enter quantity: ");
+            qty[i-1]=input.nextInt();
+            i++;
+        }
+    System.out.format("----------------------------------------------------------------------------------------------------\n");
+    System.out.format("%-10s      %-30s  %-20s %-10s %-10s\n","ID","Product","Price","Qty","Amount");
+    System.out.format("----------------------------------------------------------------------------------------------------\n");
+    int id=1;
+    while(id<(n+1)){
+        System.out.format("%-10d      %-30s  %-20d %-10d %-10d\n",id,product[id-1],price[id-1],qty[id-1],(price[id-1]*qty[id-1]));
+        id++;
+        if(i==(n+2))
+        break;
+
+    }
+    
+    System.out.format("----------------------------------------------------------------------------------------------------\n");
+    int total=0;
+    int x=1;
+    while(x<(n+1)){
+    total=total+(price[x-1]*qty[x-1]);
+    x++;
+    if(x==(n+2))
+    break;
+    }
+    System.out.format("%72s   %10d","Total",total);
+    System.out.println();
+    System.out.format("----------------------------------------------------------------------------------------------------\n");
+    }
+
+    
+
+}
